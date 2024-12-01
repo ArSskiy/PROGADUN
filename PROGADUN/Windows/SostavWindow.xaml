@@ -1,0 +1,60 @@
+﻿<Window x:Class="PROGADUN.Windows.SostavWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROGADUN.Windows"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="SostavWindow" Height="1024" Width="1440">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="306*"/>
+            <RowDefinition Height="532*"/>
+            <RowDefinition Height="155*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="777*"/>
+            <ColumnDefinition Width="566*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/PROGADUN;component/Image/FON.png"/>
+        </Grid.Background>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="46*"/>
+                <RowDefinition Height="35*"/>
+
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="186*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="111*"/>
+                <ColumnDefinition Width="408*"/>
+                <ColumnDefinition Width="47*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="+ 7 (925) 326 - 30 - 21" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextDecorations="Underline"/>
+            <TextBlock Text="Tелефон горячей линии" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextDecorations="Underline"/>
+
+            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Text="СОСТАВ" TextDecorations="Underline" FontSize="16"/>
+                <Separator Width="50" Opacity="0"/>
+                <TextBlock Text="АКАДЕМИЯ" TextDecorations="Underline" FontSize="16" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_1"/>
+                <Separator Width="50" Opacity="0"/>
+                <TextBlock Text="ГЛАВНАЯ" TextDecorations="Underline" FontSize="16" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240*"/>
+                <RowDefinition Height="52*"/>
+                <RowDefinition Height="240*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Image/PredstoyashieMatch.png" />
+            <Image Grid.Row="2" Source="/Image/ENDMATCH.png" />
+        </Grid>
+
+        
+    </Grid>
+</Window>
