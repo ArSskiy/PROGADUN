@@ -61,6 +61,18 @@
     <Compile Include="Pages\GolKeeper.xaml.cs">
       <DependentUpon>GolKeeper.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Napad1.xaml.cs">
+      <DependentUpon>Napad1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Napad2.xaml.cs">
+      <DependentUpon>Napad2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PoluZashita1.xaml.cs">
+      <DependentUpon>PoluZashita1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PoluZashita2.xaml.cs">
+      <DependentUpon>PoluZashita2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\President.xaml.cs">
       <DependentUpon>President.xaml</DependentUpon>
     </Compile>
@@ -96,6 +108,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\GolKeeper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Napad1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Napad2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PoluZashita1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PoluZashita2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,6 +240,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Reina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\napadd1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\napadd2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\poluzashit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\poluzashit2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

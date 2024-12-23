@@ -54,7 +54,23 @@
             <Image Source="/Image/PredstoyashieMatch.png" />
             <Image Grid.Row="2" Source="/Image/ENDMATCH.png" />
         </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="НАПАДАЮЩИЕ" VerticalAlignment="Center" TextDecorations="Underline" FontSize="24" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_2"/>
+                <Separator Width="20" Opacity="0"/>
+                <TextBlock Text="ПОЛУ-ЗАЩИТНИКИ" VerticalAlignment="Center" TextDecorations="Underline" FontSize="24" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_3"/>
+                <Separator Width="20" Opacity="0"/>
+                <TextBlock Text="ЗАЩИТНИКИ" VerticalAlignment="Center" TextDecorations="Underline" FontSize="24"/>
+                <Separator Width="20" Opacity="0"/>
+                <TextBlock Text="ВРАТАРЬ" VerticalAlignment="Center" TextDecorations="Underline" FontSize="24"/>
+            </StackPanel>
+        </Grid>
+        <Frame Name="SostavFrameNAPAD" Grid.Row="1" Grid.Column="1" Height="480" VerticalAlignment="Bottom" Width="650" NavigationUIVisibility="Hidden"/>
+        <Frame Name="SostavFramePOLUZASHITA" Grid.Row="1" Grid.Column="1" Height="480" VerticalAlignment="Bottom" Width="650" Visibility="Collapsed" NavigationUIVisibility="Hidden"/>
+        <Frame Name="SostavFrameZASHITA" Grid.Row="1" Grid.Column="1" Height="480" VerticalAlignment="Bottom" Width="650" Visibility="Collapsed" NavigationUIVisibility="Hidden"/>
+        <Frame Name="SostavFrameGOOLKEEPER" Grid.Row="1" Grid.Column="1" Height="480" VerticalAlignment="Bottom" Width="650" Visibility="Collapsed" NavigationUIVisibility="Hidden"/>
 
-        
+        <Image Source="/Image/Preview.png" Name="Preview" Grid.Column="1" Grid.Row="1" MouseLeftButtonUp="Preview_MouseLeftButtonUp"  HorizontalAlignment="Left" Width="50" Visibility="Collapsed"/>
+        <Image Source="/Image/Next.png" Name="Next" Grid.Column="1" Grid.Row="1" MouseLeftButtonUp="Next_MouseLeftButtonUp"  HorizontalAlignment="Right" Width="50"/>
     </Grid>
 </Window>
