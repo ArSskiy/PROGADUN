@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище DunaiProgModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Arena">
+          <Key>
+            <PropertyRef Name="ArenaID" />
+          </Key>
+          <Property Name="ArenaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Match">
+          <Key>
+            <PropertyRef Name="MatchID" />
+          </Key>
+          <Property Name="MatchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdArena" Type="int" Nullable="false" />
+          <Property Name="DateEvent" Type="date" Nullable="false" />
+          <Property Name="Guest" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Score" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MemberShip">
+          <Key>
+            <PropertyRef Name="MembershipID" />
+          </Key>
+          <Property Name="MembershipID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateOfBrth" Type="date" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Otchet">
+          <Key>
+            <PropertyRef Name="OtchetID" />
+          </Key>
+          <Property Name="OtchetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMatch" Type="int" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShemaIgr">
+          <Key>
+            <PropertyRef Name="ShemaID" />
+          </Key>
+          <Property Name="ShemaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Match_Arena">
+          <End Role="Arena" Type="Self.Arena" Multiplicity="1" />
+          <End Role="Match" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arena">
+              <PropertyRef Name="ArenaID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="IdArena" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberShip_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="MemberShip" Type="Self.MemberShip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="MemberShip">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище DunaiProgModelContainer">
+          <EntitySet Name="Arena" EntityType="Self.Arena" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Match" EntityType="Self.Match" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MemberShip" EntityType="Self.MemberShip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Otchet" EntityType="Self.Otchet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShemaIgr" EntityType="Self.ShemaIgr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Match_Arena" Association="Self.FK_Match_Arena">
+            <End Role="Arena" EntitySet="Arena" />
+            <End Role="Match" EntitySet="Match" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberShip_Role" Association="Self.FK_MemberShip_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="MemberShip" EntitySet="MemberShip" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DunaiProgModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Arena" EntityType="DunaiProgModel.Arena" />
+          <EntitySet Name="Match" EntityType="DunaiProgModel.Match" />
+          <EntitySet Name="MemberShip" EntityType="DunaiProgModel.MemberShip" />
+          <EntitySet Name="Otchet" EntityType="DunaiProgModel.Otchet" />
+          <EntitySet Name="Role" EntityType="DunaiProgModel.Role" />
+          <EntitySet Name="ShemaIgr" EntityType="DunaiProgModel.ShemaIgr" />
+          <EntitySet Name="User" EntityType="DunaiProgModel.User" />
+          <AssociationSet Name="FK_Match_Arena" Association="DunaiProgModel.FK_Match_Arena">
+            <End Role="Arena" EntitySet="Arena" />
+            <End Role="Match" EntitySet="Match" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberShip_Role" Association="DunaiProgModel.FK_MemberShip_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="MemberShip" EntitySet="MemberShip" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Arena">
+          <Key>
+            <PropertyRef Name="ArenaID" />
+          </Key>
+          <Property Name="ArenaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Match" Relationship="DunaiProgModel.FK_Match_Arena" FromRole="Arena" ToRole="Match" />
+        </EntityType>
+        <EntityType Name="Match">
+          <Key>
+            <PropertyRef Name="MatchID" />
+          </Key>
+          <Property Name="MatchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdArena" Type="Int32" Nullable="false" />
+          <Property Name="DateEvent" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Guest" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Score" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Arena" Relationship="DunaiProgModel.FK_Match_Arena" FromRole="Match" ToRole="Arena" />
+        </EntityType>
+        <EntityType Name="MemberShip">
+          <Key>
+            <PropertyRef Name="MembershipID" />
+          </Key>
+          <Property Name="MembershipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBrth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="DunaiProgModel.FK_MemberShip_Role" FromRole="MemberShip" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Otchet">
+          <Key>
+            <PropertyRef Name="OtchetID" />
+          </Key>
+          <Property Name="OtchetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMatch" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MemberShip" Relationship="DunaiProgModel.FK_MemberShip_Role" FromRole="Role" ToRole="MemberShip" />
+        </EntityType>
+        <EntityType Name="ShemaIgr">
+          <Key>
+            <PropertyRef Name="ShemaID" />
+          </Key>
+          <Property Name="ShemaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Match_Arena">
+          <End Type="DunaiProgModel.Arena" Role="Arena" Multiplicity="1" />
+          <End Type="DunaiProgModel.Match" Role="Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arena">
+              <PropertyRef Name="ArenaID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="IdArena" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MemberShip_Role">
+          <End Type="DunaiProgModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="DunaiProgModel.MemberShip" Role="MemberShip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="MemberShip">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DunaiProgModelContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Arena">
+            <EntityTypeMapping TypeName="DunaiProgModel.Arena">
+              <MappingFragment StoreEntitySet="Arena">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ArenaID" ColumnName="ArenaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Match">
+            <EntityTypeMapping TypeName="DunaiProgModel.Match">
+              <MappingFragment StoreEntitySet="Match">
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Guest" ColumnName="Guest" />
+                <ScalarProperty Name="DateEvent" ColumnName="DateEvent" />
+                <ScalarProperty Name="IdArena" ColumnName="IdArena" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberShip">
+            <EntityTypeMapping TypeName="DunaiProgModel.MemberShip">
+              <MappingFragment StoreEntitySet="MemberShip">
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="DateOfBrth" ColumnName="DateOfBrth" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MembershipID" ColumnName="MembershipID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Otchet">
+            <EntityTypeMapping TypeName="DunaiProgModel.Otchet">
+              <MappingFragment StoreEntitySet="Otchet">
+                <ScalarProperty Name="IdMatch" ColumnName="IdMatch" />
+                <ScalarProperty Name="OtchetID" ColumnName="OtchetID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="DunaiProgModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShemaIgr">
+            <EntityTypeMapping TypeName="DunaiProgModel.ShemaIgr">
+              <MappingFragment StoreEntitySet="ShemaIgr">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShemaID" ColumnName="ShemaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="DunaiProgModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

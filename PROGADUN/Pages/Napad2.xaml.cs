@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROGADUN.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace PROGADUN.Pages
         public Napad2()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AnketaWindow anketaWindow = new AnketaWindow();
+            anketaWindow.Show();
         }
     }
 }

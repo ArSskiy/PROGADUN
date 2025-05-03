@@ -1,4 +1,4 @@
-﻿using PROGADUN.Windows;
+﻿using PROGADUN.ClassPr;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,25 +11,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PROGADUN.Pages
+namespace PROGADUN.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для PoluZashita1.xaml
+    /// Логика взаимодействия для ZayavkaWindow.xaml
     /// </summary>
-    public partial class PoluZashita1 : Page
+    public partial class ZayavkaWindow : Window
     {
-        public PoluZashita1()
+        public ZayavkaWindow()
         {
             InitializeComponent();
         }
 
+        private void DatGr_Loaded(object sender, RoutedEventArgs e)
+        {
+            DatGr.ItemsSource = ClassConnect.Ent.MemberShip.ToList();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AnketaWindow anketaWindow = new AnketaWindow();
-            anketaWindow.Show();
+            ClassConnect.Ent.SaveChanges();
+            MessageBox.Show("Изменения сохранены.");
         }
     }
 }

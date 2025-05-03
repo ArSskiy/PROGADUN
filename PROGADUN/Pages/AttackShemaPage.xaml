@@ -1,0 +1,49 @@
+﻿<Page x:Class="PROGADUN.Pages.AttackShemaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROGADUN.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="469" d:DesignWidth="777"
+      Title="AttackShemaPage">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/PROGADUN;component/Image/433ZahitImg.png"/>
+        </Grid.Background>
+        <Image Source="/Image/Baburin.png" Width="69" Height="93" Margin="23,188,685,188"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Borodin.png" Width="69" Height="93" Margin="249,82,459,294"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Ivankov.png" Width="69" Height="93" Margin="249,273,459,103"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Guz.png" Width="69" Height="93" Margin="156,34,552,342"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Moscvichev.png" Width="69" Height="93" Margin="286,175,422,201"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Kovalev.png" Width="69" Height="93" Margin="156,338,552,38"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Churich.png" Width="69" Height="93" Margin="404,78,304,298"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Orexov.png" Width="69" Height="93" Margin="404,269,304,107"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Poloz.png" Width="69" Height="93" Margin="349,10,359,366"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Cerviakov.png" Width="69" Height="93" Margin="349,362,359,14"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+        <Image Source="/Image/Reina.png" Width="69" Height="93" Margin="513,175,195,201"
+       MouseLeftButtonDown="Image_MouseLeftButtonDown"  MouseLeftButtonUp="Image_MouseLeftButtonUp"
+       MouseMove="Image_MouseMove"/>
+    </Grid>
+</Page>

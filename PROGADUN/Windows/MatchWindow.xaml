@@ -1,0 +1,42 @@
+﻿<Window x:Class="PROGADUN.Windows.MatchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROGADUN.Windows"
+        mc:Ignorable="d"
+        Title="Матчи" Height="450" Width="720" ResizeMode="NoResize">
+    <Grid Background="#FFE8E8E8">
+        <DataGrid  Grid.Row="0"  x:Name="DatGr" AutoGenerateColumns="False" HorizontalAlignment="Center" VerticalAlignment="Top" Loaded="DatGr_Loaded"  Height="360"  FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Матч" Width="240" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Дата" Width="120" Binding="{Binding DateEvent, StringFormat=dd/MM/yyyy}"/>
+                <DataGridTextColumn Header="Арена" Width="235" Binding="{Binding Arena.Name}"/>
+                <DataGridTextColumn Header="Гости" Width="120" Binding="{Binding Guest}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="СОХРАНИТЬ" Background="Black" Foreground="White" 
+                    FontSize="16"   HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="120" Height="42"  Margin="5" Click="Button_Click_1">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Black" CornerRadius="14">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button Content="ДОБАВИТЬ" Background="Black" Foreground="White" 
+                    FontSize="16"   HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="120" Height="42"  Margin="0 0 0 5" Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Black" CornerRadius="14">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

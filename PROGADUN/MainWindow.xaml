@@ -38,13 +38,45 @@
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="86*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="240*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="39*"/>
                 <RowDefinition Height="52*"/>
-                <RowDefinition Height="240*"/>
+                <RowDefinition Height="43*"/>
+                <RowDefinition Height="18*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="46*"/>
+                <RowDefinition Height="66*"/>
+                <RowDefinition Height="31*"/>
             </Grid.RowDefinitions>
-            <Image Source="/Image/PredstoyashieMatch.png" />
-            <Image Grid.Row="2" Source="/Image/ENDMATCH.png" />
+
+
+
+
+            <Image Source="/Image/Bm.png" Grid.RowSpan="7" Grid.ColumnSpan="5" />
+            <Image Source="/Image/SPARTAK.png" Grid.Row="5" Grid.Column="4" HorizontalAlignment="Left"/>
+            <Image Grid.Row="8" Source="/Image/ENDMATCH.png" Grid.ColumnSpan="5" Grid.RowSpan="7" />
+            <Image Source="/Image/ROSTOV.png" Grid.Row="13" Grid.Column="4" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="TextBlockLocation1" Grid.Row="1" HorizontalAlignment="Center" Grid.ColumnSpan="5" FontWeight="Bold" />
+            <TextBlock x:Name="TextBlockMatchName1" Grid.Row="3" HorizontalAlignment="Center" Grid.ColumnSpan="5" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlockMatchDate1" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24" />
+
+            <TextBlock x:Name="TextBlockLocation2" Grid.Row="9" HorizontalAlignment="Center" Grid.ColumnSpan="5" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlockMatchName2" Grid.Row="11" HorizontalAlignment="Center" Grid.ColumnSpan="5" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlockMatchDate2" Grid.Row="13" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24"/>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1">

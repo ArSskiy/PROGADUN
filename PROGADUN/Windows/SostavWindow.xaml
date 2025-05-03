@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROGADUN.Windows"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="SostavWindow" Height="1024" Width="1440">
+        Title="SostavWindow" Height="1024" Width="1440" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="306*"/>
@@ -35,24 +35,58 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="+ 7 (925) 326 - 30 - 21" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextDecorations="Underline"/>
             <TextBlock Text="Tелефон горячей линии" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextDecorations="Underline"/>
-
-            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Grid.Row="3" Text="ЗАЯВКИ" TextDecorations="Underline" FontSize="16" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_4"/>
+            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Grid.ColumnSpan="2">
                 <TextBlock Text="СОСТАВ" TextDecorations="Underline" FontSize="16"/>
                 <Separator Width="50" Opacity="0"/>
                 <TextBlock Text="АКАДЕМИЯ" TextDecorations="Underline" FontSize="16" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_1"/>
                 <Separator Width="50" Opacity="0"/>
                 <TextBlock Text="ГЛАВНАЯ" TextDecorations="Underline" FontSize="16" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"/>
+                <Separator Width="50" Opacity="0"/>
+                <TextBlock Text="МАТЧИ" TextDecorations="Underline" FontSize="16" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_5"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="86*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="240*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="39*"/>
                 <RowDefinition Height="52*"/>
-                <RowDefinition Height="240*"/>
+                <RowDefinition Height="43*"/>
+                <RowDefinition Height="18*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="46*"/>
+                <RowDefinition Height="66*"/>
+                <RowDefinition Height="31*"/>
             </Grid.RowDefinitions>
-            <Image Source="/Image/PredstoyashieMatch.png" />
-            <Image Grid.Row="2" Source="/Image/ENDMATCH.png" />
+
+
+
+
+            <Image Source="/Image/Bm.png" Grid.RowSpan="7" Grid.ColumnSpan="5" />
+            <Image Grid.Row="8" Source="/Image/ENDMATCH.png" Grid.ColumnSpan="5" Grid.RowSpan="7" />
+            <Image Source="/Image/SPARTAK.png" Grid.Row="5" Grid.Column="4" HorizontalAlignment="Left"/>
+            <Image Source="/Image/ROSTOV.png" Grid.Row="13" Grid.Column="4" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="TextBlockLocation1" Grid.Row="1" HorizontalAlignment="Center" Grid.ColumnSpan="5" FontWeight="Bold" />
+            <TextBlock x:Name="TextBlockMatchName1" Grid.Row="3" HorizontalAlignment="Center" Grid.ColumnSpan="5" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlockMatchDate1" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24" />
+
+            <TextBlock x:Name="TextBlockLocation2" Grid.Row="9" HorizontalAlignment="Center" Grid.ColumnSpan="5" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlockMatchName2" Grid.Row="11" HorizontalAlignment="Center" Grid.ColumnSpan="5" FontWeight="Bold"/>
+            <TextBlock x:Name="TextBlockMatchDate2" Grid.Row="13" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="ExtraBold" FontSize="24"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1" Height="50" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal">
